@@ -1,14 +1,23 @@
 import React from 'react';
-import './Table.css';
+
 
 function Table() {
   return (
-    <div className="Table">
-        <table className= "table">
-            <Table-Header></Table-Header>
-            <Table-Data></Table-Data>
-        </table>
-    </div>
+        <tbody>
+            <tr>
+                <td>Image</td>
+            </tr>
+            <tr>
+                <td>name</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+            </tr>
+        </tbody>
+
   );
 }
 
