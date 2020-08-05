@@ -1,16 +1,37 @@
-import React from 'react';
-import './Table.css';
+import React, { Component } from 'react';
+import Nav from '../Nav';
+import TableHeader from '../Table/table-header';
+import API from '../../utlis/API';
 
-function Table() {
+class TableData extends Component{
+  state ={
+    users: [{}]
+  }
+
+
+componentDidMount() {
+  API.getUsers().then( res =>{
+    console.log('res', res);
+    this.setState({
+      users: res.data.results
+    })
+  })
+}
+
+render(){
+  console.log('state', this.state.users)
   return (
     <div className="Table">
-        <table className= "table">
-            <Table-Header></Table-Header>
-            <Table-Data></Table-Data>
-                {/* headers at tops of columns */}
-        </table>
+        <Nav />
+        <TableHeader />
     </div>
   );
 }
 
-export default Table;
+}
+
+export default TableData;
+
+//Make the API  call to get random users
+//HandleSearch 
+  //filter
