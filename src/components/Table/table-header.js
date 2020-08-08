@@ -1,18 +1,23 @@
 import React from 'react';
 import Table from  './Table';
 
-function TableHeader() {
+function TableHeader({headings}) {
   return (
     <div className="Table">
         <table className= "table">
             <thead>
-              <tr>
+              {headings && (headings.map(item => {
+                return <th>{item}</th>
+              })
+              )}
+
+              {/* <tr> */}
                 {/* headers at tops of columns */}
+                {/* <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <th></th>
-                </tr>
+              </tr> */}
             </thead>
           
             <Table />
